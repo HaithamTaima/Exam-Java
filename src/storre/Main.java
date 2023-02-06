@@ -14,6 +14,7 @@ public class Main {
 
 
 
+
         // 1. انشاء كائنات من نوع product (عدد 2 او اكثر)
         Product product1 = new Product();
         Product product2 = new Product();
@@ -26,6 +27,7 @@ public class Main {
         product1.setProduct_name("Laptop ");
         product1.setPrice(10.0);
         product1.setQuantity(100);
+
 
         product2.setProduct_id(2);
         product2.setProduct_name("Smartphone");
@@ -47,10 +49,19 @@ public class Main {
         // طباعة بيانات المخزن
         store.print_store();
 
+//دالة اضافة على كمية مونتج معين
+        store.supply(product1,1);
+
     // طباعة بيانات المنتجات الموجودة في المخزن
         for (Product p : store.getProduct_arr()) {
             p.print_product();
         }
+//دالة تطبع عدد المنتجات في المخزن
+        store.count();
+        store.print_store();
+        product1.print_product();
+
+
 
     }
 }

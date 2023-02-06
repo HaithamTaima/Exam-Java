@@ -26,79 +26,81 @@ public class Main {
         // دالة تطبع جميع البيانات على الشاشة
         printAllCars(cars);
 
-        //ادخال بيانات سيارة مع التحقق من التاريــخ و الــنـوع
-        inputData(cars);
+//        //ادخال بيانات سيارة مع التحقق من التاريــخ و الــنـوع
+//        inputData(cars);
 
         int totalCars = totalCars(cars);
         System.out.println("Total cars: " + totalCars);
 
 
-        // دالة تطبع جميع البيانات على الشاشة
-        printAllCars(cars);
+//        // دالة تطبع جميع البيانات على الشاشة
+//        printAllCars(cars);
 
     }
 
 
 
     //ادخال بيانات سياؤة مع التحقق من التاريــخ و الــنـوع
-    public static void inputData(ArrayList<Dcar> cars) {
-        while (true) {
-
-
-
-            System.out.print("Enter car ID: ");
-            int id = sc.nextInt();
-            sc.nextLine();
-            System.out.print("Enter car corporation: ");
-            String corp = sc.nextLine();
-            System.out.print("Enter car color: ");
-            String color = sc.nextLine();
-            System.out.print("Enter car production date (yyyy/MM/dd): ");
-            String ind_date = sc.nextLine();
-
-            // دالة تشخص تاريخ الانتاج المدخل بحيث يكون اقل من تاريخ اليوم
-            LocalDate today = LocalDate.now();
-            LocalDate carIndDate = LocalDate.parse(ind_date);
-
-            if (carIndDate.isBefore(today)) {
-                System.out.println("The production date " + ind_date + " is valid.");
-            } else {
-                System.out.println("The production date " + ind_date + " must be before today.");
-            }
-
-
-            System.out.print("Enter car type (مالكي, عمومي, تجاري): ");
-            String type = sc.nextLine();
-
-            // هذه  تقوم بفحص صحة نوع السيارة حسب القيم المدخلة
-            if (type.equals("مالكي") || type.equals("عمومي") || type.equals("تجاري")) {
-                System.out.println("Valid car type: " + type);
-            } else {
-                System.out.println("Invalid car type. Must be either 'مالكي', 'عمومي', or 'تجاري'.");
-            }
-
-            System.out.print("Enter number of doors: ");
-            int doors = sc.nextInt();
-            Dcar car = new Dcar(id, corp, color, ind_date, type, doors);
-            cars.add(car);
-            System.out.print("Do you want to add another car? (yes/no): ");
-            String answer = sc.next();
-            if (answer.equalsIgnoreCase("no")) {
-                break;
-            }
-        }
-    }
+//    public static void inputData(ArrayList<Dcar> cars) {
+//        while (true) {
+//
+//
+//
+//            System.out.print("Enter car ID: ");
+//            int id = sc.nextInt();
+//            sc.nextLine();
+//            System.out.print("Enter car corporation: ");
+//            String corp = sc.nextLine();
+//            System.out.print("Enter car color: ");
+//            String color = sc.nextLine();
+//            System.out.print("Enter car production date (yyyy/MM/dd): ");
+//            String ind_date = sc.nextLine();
+//
+//            // دالة تشخص تاريخ الانتاج المدخل بحيث يكون اقل من تاريخ اليوم
+//            LocalDate today = LocalDate.now();
+//            LocalDate carIndDate = LocalDate.parse(ind_date);
+//
+//            if (carIndDate.isBefore(today)) {
+//                System.out.println("The production date " + ind_date + " is valid.");
+//            } else {
+//                System.out.println("The production date " + ind_date + " must be before today.");
+//            }
+//
+//
+//            System.out.print("Enter car type (مالكي, عمومي, تجاري): ");
+//            String type = sc.nextLine();
+//
+//            // هذه  تقوم بفحص صحة نوع السيارة حسب القيم المدخلة
+//            if (type.equals("مالكي") || type.equals("عمومي") || type.equals("تجاري")) {
+//                System.out.println("Valid car type: " + type);
+//            } else {
+//                System.out.println("Invalid car type. Must be either 'مالكي', 'عمومي', or 'تجاري'.");
+//            }
+//
+//            System.out.print("Enter number of doors: ");
+//            int doors = sc.nextInt();
+//            Dcar car = new Dcar(id, corp, color, ind_date, type, doors);
+//            cars.add(car);
+//            System.out.print("Do you want to add another car? (yes/no): ");
+//            String answer = sc.next();
+//            if (answer.equalsIgnoreCase("no")) {
+//                break;
+//            }
+//        }
+//    }
 
 
     // هذه الدالة تقوم بطباعة جميع البيانات لجميع السيارات في المصفوفة.
-    public static void printAllCars(ArrayList<Dcar> list) {
-        for (Dcar car : list) {
-            System.out.println("ID: " + car.getId());
-            System.out.println("Corp: " + car.getCorp());
-            System.out.println("Color: " + car.getColor());
-            System.out.println("Production Date: " + car.getInd_date());
-            System.out.println("Type: " + car.getType());
-            System.out.println("Doors: " + car.getDoors());
+    public static void printAllCars(ArrayList<Dcar> cars) {
+
+            for (int i = 0; i < cars.size(); i++) {
+                System.out.println("Car #" + (i+1));
+                System.out.println("ID: " + cars.get(i).getId());
+                System.out.println("Corp: " + cars.get(i).getCorp());
+                System.out.println("Color: " + cars.get(i).getColor());
+                System.out.println("Ind_date: " + cars.get(i).getInd_date());
+                System.out.println("Type: " + cars.get(i).getType());
+                System.out.println("Doors: " + cars.get(i).getDoors());
             System.out.println("-------------------");
         }
     }

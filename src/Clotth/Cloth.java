@@ -33,6 +33,7 @@ public class Cloth {
         System.out.println("Quantity: " + quantity);
         System.out.println("Size: " + size);
         System.out.println("Total Price: " + totalPrice());
+        System.out.println("------------------");
     }
 
     public String getModel() {

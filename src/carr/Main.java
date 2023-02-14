@@ -1,6 +1,7 @@
 package carr;
 
-import java.time.LocalDate;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,24 +10,30 @@ public class Main {
 
     public static void main(String[] args) {
         ArrayList<Dcar> cars = new ArrayList<>();
-        Dcar car1 = new Dcar(1, "Toyota", "Red", "2015/10/01", "مالكي", 4);
-        Dcar car2 = new Dcar(2, "Honda", "Blue", "2015/12/01", "عمومي", 2);
-        Dcar car3 = new Dcar(3, "Nissan", "Green", "2016/02/01", "تجاري", 6);
+        try {
+            Dcar car1 = new Dcar(1, "Toyota", "Red", new SimpleDateFormat("dd/MM/yyyy").parse("2015/10/01"), "مالكي", 4);
+            Dcar car2 = new Dcar(2, "Honda", "Blue", new SimpleDateFormat("dd/MM/yyyy").parse("2015/12/01"), "عمومي", 2);
+            Dcar car3 = new Dcar(3, "Nissan", "Green", new SimpleDateFormat("dd/MM/yyyy").parse("2016/02/01"), "تجاري", 6);
 
-        cars.add(car1);
-        cars.add(car2);
-        cars.add(car3);
+            cars.add(car1);
+            cars.add(car2);
+            cars.add(car3);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+
 
         // دالة تعدل بيانات عدد البواب للسيارة
         modifyDoors(cars, 1, 6);
 
         // دالة حساب عدد السيارات
+        System.out.println("Total number of cars: " + cars.size());
         totalCars(cars);
 
         // دالة تطبع جميع البيانات على الشاشة
         printAllCars(cars);
 
-//        //ادخال بيانات سيارة مع التحقق من التاريــخ و الــنـوع
+        //ادخال بيانات سيارة مع التحقق من التاريــخ و الــنـوع
 //        inputData(cars);
 
         int totalCars = totalCars(cars);
@@ -37,7 +44,6 @@ public class Main {
 //        printAllCars(cars);
 
     }
-
 
 
     //ادخال بيانات سياؤة مع التحقق من التاريــخ و الــنـوع
@@ -93,14 +99,14 @@ public class Main {
     // هذه الدالة تقوم بطباعة جميع البيانات لجميع السيارات في المصفوفة.
     public static void printAllCars(ArrayList<Dcar> cars) {
 
-            for (int i = 0; i < cars.size(); i++) {
-                System.out.println("Car #" + (i+1));
-                System.out.println("ID: " + cars.get(i).getId());
-                System.out.println("Corp: " + cars.get(i).getCorp());
-                System.out.println("Color: " + cars.get(i).getColor());
-                System.out.println("Ind_date: " + cars.get(i).getInd_date());
-                System.out.println("Type: " + cars.get(i).getType());
-                System.out.println("Doors: " + cars.get(i).getDoors());
+        for (int i = 0; i < cars.size(); i++) {
+            System.out.println("Car #" + (i + 1));
+            System.out.println("ID: " + cars.get(i).getId());
+            System.out.println("Corp: " + cars.get(i).getCorp());
+            System.out.println("Color: " + cars.get(i).getColor());
+            System.out.println("Ind_date: " + cars.get(i).getInd_date());
+            System.out.println("Type: " + cars.get(i).getType());
+            System.out.println("Doors: " + cars.get(i).getDoors());
             System.out.println("-------------------");
         }
     }
@@ -115,6 +121,7 @@ public class Main {
         System.out.println("Total number of cars: " + count);
         return count;
     }
+
     // دالة تعدل بيانات عدد البواب للسيارة
     public static void modifyDoors(ArrayList<Dcar> dcarList, int id, int doors) {
         for (Dcar dcar : dcarList) {

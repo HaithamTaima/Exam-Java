@@ -54,12 +54,14 @@ public class Employee {
        System.out.println("Full Name: " + fullName);
        System.out.println("Salary: " + salary);
        System.out.println("Job Title: " + jobTitle);
+
     }
 
 
     public double getSalaryInYear(){
-        return salary*12;
+        return  salary*12;
     }
+
 
 
 

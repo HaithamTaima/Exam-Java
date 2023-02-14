@@ -64,9 +64,9 @@ public class Store {
         System.out.println("-------");
     }
     public void print_store(){
-        System.out.println("Store ID: "+this.store_id);
-        System.out.println("Store Location: "+this.store_location);
-        System.out.println("Store Tel: "+this.store_tel);
+        System.out.println("Store ID: "+getStore_id());
+        System.out.println("Store Location: "+getStore_location());
+        System.out.println("Store Tel: "+getStore_tel());
         System.out.println("Products in the store: ");
         System.out.println("------------- ");
 //        for(int i=0;i<product_arr.size();i++){

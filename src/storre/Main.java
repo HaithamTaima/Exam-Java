@@ -58,8 +58,9 @@ public class Main {
         }
 //دالة تطبع عدد المنتجات في المخزن
         store.count();
-        store.print_store();
-        product1.print_product();
+
+        //دالة تطبع بيانات منتج معين
+      //  product1.print_product();
 
 
 

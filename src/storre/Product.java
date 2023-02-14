@@ -1,6 +1,7 @@
 package storre;
 
-public class Product { private int product_id;
+public class Product {
+    private int product_id;
     private String product_name;
     private double price;
     private int quantity;
@@ -44,7 +45,6 @@ public class Product { private int product_id;
         System.out.println("Quantity: " + quantity);
         System.out.println("================================================= ");
     }
-    public  void  uu(){
-        System.out.println("jhgd");
-    }
+
+
 }

@@ -62,6 +62,5 @@ public class Product {
         System.out.println("سعر المنتج: " + price);
         System.out.println("كمية المنتج: " + quantity);
 
-
     }
 }

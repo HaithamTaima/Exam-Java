@@ -9,9 +9,15 @@ class Car {
     private Date ind_date;
     private String type;
 
-    public Car(int id, String corp, String color, String indDate, String type) {
-
+    public Car(int id, String corp, String color, Date indDate, String type) {
+        this.id = id;
+        this.corp = corp;
+        this.color = color;
+        this.ind_date = ind_date;
+        this.type = type;
     }
+
+
 
     // دالة setId لتعيين رقم السيارة
     public void setId(int id) {

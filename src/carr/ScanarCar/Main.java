@@ -133,7 +133,7 @@ public class Main {
         }
         mainScreen();
     }
-
+//تعرض
     public static void showAllCars() {
         for (DCar dCar : carArrayList) {
             System.out.println(dCar.toString());

@@ -19,35 +19,31 @@ class Car {
 
 
 
-    // دالة setId لتعيين رقم السيارة
     public void setId(int id) {
         this.id = id;
     }
 
-    // دالة getId للحصول على رقم السيارة
     public int getId() {
         return id;
     }
 
-    // دالة setCorp لتعيين الشركة المصنعة
     public void setCorp(String corp) {
         this.corp = corp;
     }
 
-    // دالة getCorp للحصول على الشركة المصنعة
+
     public String getCorp() {
         return corp;
     }
 
-    // دالة setColor لتعيين لون السيارة
     public void setColor(String color) {
         this.color = color;
     }
 
-    // دالة getColor للحصول على لون السيارة
     public String getColor() {
         return color;
     }
+
 
     // دالة setInd_date لتعيين تاريخ الانتاج
     public void setInd_date(Date ind_date) {

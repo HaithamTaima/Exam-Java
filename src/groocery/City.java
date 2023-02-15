@@ -34,7 +34,7 @@ public class City {
 
 
     public void getAllGroceryByEmployeeName(String name) {
-        System.out.println("Grocery Stores for Employee " + name + " in " + this.name + ":");
+
         for (Grocery grocery : this.groceries) {
             for (Employee employee : grocery.getEmployees()) {
                 if (employee.getFullName().equals(name)) {
@@ -42,6 +42,7 @@ public class City {
                 }
             }
         }
+        System.out.println("Grocery Stores for Employee " + name + " in " + this.name + ":");
     }
 
 }

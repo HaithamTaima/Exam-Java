@@ -72,11 +72,12 @@ int totalSalary() {
 
 
     //() printAllEmployees وهي دالة تقوم بطباعة جميع خصائص الموظفين في البقالة.
-    public void printAllEmployeesB() {
-        for (Employee employee : employees) {
-            System.out.println(employee.toString());
-        }
-    }
+//    public void printAllEmployeesB() {
+//        for (Employee employee : employees) {
+//            System.out.println("______employee.toString()____");
+//            System.out.println(employee.toString());
+//        }
+//    }
 
 
 // دالة (product groocery.Product(addProduct إلضافة منتج جديد
@@ -95,8 +96,9 @@ boolean removeProduct(int id) {
     return false;
 }
     //دالة count لطباعة عدد المنتجات في البقالة.
-    int count() {
-        return products.size();
+    void count() {
+
+        System.out.println("Number of products:"+products.size());
     }
 
     //دالة ()getAlmostEndQuantity لطباعة المنتج الذي سيوشك عمى االنتهاء من البقالة ، حيث ان اذا كان المنتج كميته اقل من 10 في البقالة

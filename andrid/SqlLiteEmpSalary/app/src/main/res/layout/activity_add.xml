@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="name" />
+
+    <EditText
+        android:id="@+id/edSalary"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:layout_height="wrap_content"
+        android:hint="salary" />
+
+    <Button
+        android:id="@+id/buInsert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="insert" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/buAll"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/buAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All" />
+
+        <RadioButton
+            android:id="@+id/buMore1000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="more thane or equal 1000" />
+
+        <RadioButton
+            android:id="@+id/buLess1000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="less thane 1000" />
+    </RadioGroup>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

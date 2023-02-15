@@ -11,6 +11,8 @@ public class Main {
         Grocery grocery = new Grocery();
         //إعطاء اسم للمحل الأسواق
         grocery.setName("Supermarket");
+        grocery.setEmployees(new ArrayList<>());
+        grocery.setProducts(new ArrayList<>());
 
         //إنشاء عناصر من كلاس Employee
         Employee employee1 = new Employee(1,"John jhait", 30.0, "haipr mol");
@@ -48,7 +50,7 @@ public class Main {
         }
 
         //عدد المنتجات
-        System.out.println("Number of products: " + grocery.count());
+        grocery.count();
 
         //الحصول على المنتج ذو الكمية قريبة من النهاية
         grocery.getAlmostEndQuantity();

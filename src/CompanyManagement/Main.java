@@ -23,7 +23,7 @@ public class Main {
 
         department.printAllEmployees();
 
-        System.out.println("Number of employees in the department: " + department.count());
+         department.count();
 
 
 

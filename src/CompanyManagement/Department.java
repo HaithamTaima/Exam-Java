@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Department {
     private String name;
-    private ArrayList<Employee>employees= new ArrayList<Employee>();
+    private ArrayList<Employee>employees;
     int totalSalaryInDepartment = 0;
 
 
@@ -40,8 +40,10 @@ public class Department {
     }
 
     //دالة count لطباعة عدد الموظفين في الق
-    int count() {
-        return employees.size();
+
+
+    void  count (){
+        System.out.println("عدد الموظفين"+employees.size());
     }
 
 
